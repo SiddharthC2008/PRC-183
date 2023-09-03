@@ -1,0 +1,38 @@
+<View style={styles.lowerContainer}>
+<View style={styles.lowerTopContainer}></View> 
+<View style={styles.lowerBottomContainer}>
+<ScrollView
+contentContainerStyle={styles.filters}
+horizontal
+showsHorizontalScroll Indicator={false}
+>
+{data.map(filter_data => {
+return (
+<TouchableOpacity
+key={filter-button-${filter_data.id}"}
+style={[
+styles.filterButton,
+{
+borderColor:
+this.state.current_filter === filter_data.id
+? "#FFA384"
+: "#FFFF"
+}
+]}
+onPress={() =>
+this.setState({
+current_filter: `${filter_data.id}`
+})
+}
+>
+<Image
+source={filter_data.src}
+style={styles.filterImage}
+/>
+</TouchableOpacity>
+);
+})}
+</ScrollView>
+</View>
+</View>
+</View>
